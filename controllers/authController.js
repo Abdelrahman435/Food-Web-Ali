@@ -10,7 +10,6 @@ const multer = require("multer");
 const sharp = require("sharp");
 const multerStorage = multer.memoryStorage();
 
-
 const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith("image")) {
     cb(null, true);
@@ -146,7 +145,6 @@ exports.restrictTo = (...roles) => {
   };
 };
 
-
 exports.forgotPassword = catchAsync(async (req, res, next) => {
   // 1) Get user based on posted email
   const user = await User.findOne({ email: req.body.email });
@@ -162,7 +160,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
   try {
     const resetURL = `
-    http://localhost:3000/resetPassword/${resetToken}`;
+    http://localhost:4000/resetPassword/${resetToken}`;
 
     await new Email(user, resetURL).sendPasswordReset();
     return res.status(200).json({
