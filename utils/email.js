@@ -10,20 +10,21 @@ module.exports = class Email {
     this.to = user.email;
     this.firstName = user.firstName;
     this.url = url;
-    this.from = `Teachable <hello@teachable.io>`;
+    this.from = `Bistro Bliss <bistro.bliss.restaurants@gmail.com>`; // Updated from email
   }
 
   newTransport() {
-
     return nodemailer.createTransport({
       host: "smtp.gmail.com",
       service: "Gmail",
       port: 587,
       secure: false,
       auth: {
-        user: process.env.NODEMAILER_USER,
-        pass: process.env.NODEMAILER_PASSWORD,
-      },
+        user: 'bistro.bliss.restaurants@gmail.com',
+        pass: 'nrke fvbf hshx egec', // Use the App Password here
+      }
+
+
     });
   }
 
@@ -53,7 +54,7 @@ module.exports = class Email {
   }
 
   async sendWelcome() {
-    await this.send("welcome", "Welcome to the Teachable Family!");
+    await this.send("welcome", "Welcome to Bistro Bliss!");
   }
 
   async sendPasswordReset() {
