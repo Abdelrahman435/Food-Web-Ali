@@ -20,9 +20,9 @@ module.exports = class Email {
       port: 587,
       secure: false,
       auth: {
-        user: 'bistro.bliss.restaurants@gmail.com',
-        pass: 'nrke fvbf hshx egec', // Use the App Password here
-      }
+        user: process.env.NODEMAILER_USER,
+        pass: process.env.NODEMAILER_PASSWORD,
+      },
 
 
     });
