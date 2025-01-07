@@ -9,7 +9,7 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-var app = require("../../app");
+var app = require("./app");
 var debug = require("debug")("server:server");
 var http = require("http");
 
