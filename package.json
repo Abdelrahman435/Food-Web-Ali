@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon server.js",
-     "build": "vercel build"
+    "build": "vercel build"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -44,6 +44,7 @@
     "serverless-http": "^3.2.0",
     "sharp": "^0.33.4",
     "streamifier": "^0.1.1",
+    "uglify-js": "^3.19.3",
     "validator": "^13.12.0",
     "xss-clean": "^0.1.4"
   }
